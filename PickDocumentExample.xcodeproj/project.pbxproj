@@ -15,6 +15,9 @@
 		65F9F663217601F000490B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F9F662217601F000490B61 /* main.m */; };
 		65F9F66D217601F000490B61 /* PickDocumentExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F9F66C217601F000490B61 /* PickDocumentExampleTests.m */; };
 		65F9F678217601F000490B61 /* PickDocumentExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F9F677217601F000490B61 /* PickDocumentExampleUITests.m */; };
+		65F9F686217602C700490B61 /* file.docx in Resources */ = {isa = PBXBuildFile; fileRef = 65F9F685217602C700490B61 /* file.docx */; };
+		65F9F68A21760CEA00490B61 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F9F68921760CEA00490B61 /* CoreServices.framework */; };
+		65F9F68C21760D8800490B61 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F9F68B21760D8800490B61 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		65F9F673217601F000490B61 /* PickDocumentExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickDocumentExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F9F677217601F000490B61 /* PickDocumentExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickDocumentExampleUITests.m; sourceTree = "<group>"; };
 		65F9F679217601F000490B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F9F685217602C700490B61 /* file.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = file.docx; sourceTree = "<group>"; };
+		65F9F6872176077700490B61 /* PickDocumentExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PickDocumentExample.entitlements; sourceTree = "<group>"; };
+		65F9F68921760CEA00490B61 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		65F9F68B21760D8800490B61 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F9F68C21760D8800490B61 /* MobileCoreServices.framework in Frameworks */,
+				65F9F68A21760CEA00490B61 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 				65F9F66B217601F000490B61 /* PickDocumentExampleTests */,
 				65F9F676217601F000490B61 /* PickDocumentExampleUITests */,
 				65F9F651217601ED00490B61 /* Products */,
+				65F9F68821760CEA00490B61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +111,8 @@
 		65F9F652217601ED00490B61 /* PickDocumentExample */ = {
 			isa = PBXGroup;
 			children = (
+				65F9F6872176077700490B61 /* PickDocumentExample.entitlements */,
+				65F9F685217602C700490B61 /* file.docx */,
 				65F9F653217601ED00490B61 /* AppDelegate.h */,
 				65F9F654217601ED00490B61 /* AppDelegate.m */,
 				65F9F656217601ED00490B61 /* ViewController.h */,
@@ -130,6 +142,15 @@
 				65F9F679217601F000490B61 /* Info.plist */,
 			);
 			path = PickDocumentExampleUITests;
+			sourceTree = "<group>";
+		};
+		65F9F68821760CEA00490B61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65F9F68B21760D8800490B61 /* MobileCoreServices.framework */,
+				65F9F68921760CEA00490B61 /* CoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +220,11 @@
 				TargetAttributes = {
 					65F9F64F217601ED00490B61 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					65F9F667217601F000490B61 = {
 						CreatedOnToolsVersion = 10.0;
@@ -238,6 +264,7 @@
 				65F9F660217601F000490B61 /* LaunchScreen.storyboard in Resources */,
 				65F9F65D217601F000490B61 /* Assets.xcassets in Resources */,
 				65F9F65B217601ED00490B61 /* Main.storyboard in Resources */,
+				65F9F686217602C700490B61 /* file.docx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +462,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PickDocumentExample/PickDocumentExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VPW58JMTFU;
 				INFOPLIST_FILE = PickDocumentExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +480,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PickDocumentExample/PickDocumentExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VPW58JMTFU;
 				INFOPLIST_FILE = PickDocumentExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

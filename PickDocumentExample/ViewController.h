@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIDocumentPickerDelegate,UIDocumentMenuDelegate>
 
-
+@property NSData * documentData;
+@property NSURL * dataURL;
+@property NSString * dataStr;
+- (IBAction)pickDocumentTap:(id)sender;
 @end
 
